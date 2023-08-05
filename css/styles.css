@@ -16,7 +16,6 @@ h1 {
   display: flex;
   justify-content: center;
   position: relative;
-  left: 100px;
   bottom: 70px;
 }
 

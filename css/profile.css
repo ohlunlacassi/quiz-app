@@ -54,7 +54,7 @@ h1 {
   border-bottom: none;
   background-color: #bcdbff;
   color: #3381fe;
-  width: 450px;
+  width: auto;
   display: flex;
   justify-content: center;
   padding-bottom: 5px;

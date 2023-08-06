@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(#154be0, #8fc5ff);
+  font-family: "REM", sans-serif;
+  padding: 50px 150px 50px 150px;
+}
+
+h1 {
+  color: #daeaff;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 70px;
+}

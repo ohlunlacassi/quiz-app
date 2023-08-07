@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="../css/setting.css" />
     <title>Setting</title>
   </head>
-  <body>
+  <body data-js="body">
     <header>
-      <a href="./html/profile.html">
+      <a href="../html/profile.html">
         <img
           width="64"
           height="64"
@@ -20,15 +20,18 @@
     </header>
     <main class="setting-container">
       <table>
-        <thead>
-          <th>Setting</th>
+        <thead class="table-header">
+          <tr>
+            <th>Setting</th>
+          </tr>
         </thead>
         <tbody>
-          <td>Black/Light Mode</td>
-          <label class="switch">
-            <input type="checkbox" />
-            <span class="slider round"></span>
-          </label>
+          <tr>
+            <td>Black/Light Mode</td>
+          </tr>
+          <tr>
+            <div class="toggle" data-js="toggle-switch"></div>
+          </tr>
         </tbody>
       </table>
     </main>
@@ -60,5 +63,6 @@
         </a>
       </nav>
     </footer>
+    <script src="../javascript/setting.js"></script>
   </body>
 </html>

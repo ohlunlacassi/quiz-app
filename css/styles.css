@@ -81,24 +81,10 @@ a {
   margin: 15px;
 }
 
-.tag-container .html-1,
-.tag-container .flexbox-1,
-.tag-container .css-1 {
-  border: none;
-  border-radius: 50px;
-  background-color: #a4a3a1;
-  padding: 3px 10px;
-}
-
-.tag-container .css-2 {
-  border: none;
-  border-radius: 50px;
-  background-color: #a4a3a1;
-  padding: 3px 10px;
-}
-
-.tag-container .html-3,
-.tag-container .css-3 {
+.tag-container .html,
+.tag-container .flexbox,
+.tag-container .css,
+.tag-container .js {
   border: none;
   border-radius: 50px;
   background-color: #a4a3a1;

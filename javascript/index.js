@@ -7,3 +7,14 @@ bookmarkButtons.forEach((button) => {
     button.classList.toggle("dark");
   });
 });
+
+const showAnswerButton = document.querySelectorAll(
+  '[data-js="show-answer-button"]'
+);
+const answer = document.querySelectorAll('[data-js="answer"]');
+
+showAnswerButton.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    answer[index].classList.toggle("visible");
+  });
+});

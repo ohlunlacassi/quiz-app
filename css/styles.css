@@ -110,10 +110,7 @@ a {
   margin: 15px;
 }
 
-.tag-container .html,
-.tag-container .flexbox,
-.tag-container .css,
-.tag-container .js {
+.tag-container .tag {
   border: none;
   border-radius: 50px;
   background-color: #a4a3a1;

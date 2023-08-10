@@ -8,13 +8,13 @@ bookmarkButtons.forEach((button) => {
   });
 });
 
-const showAnswerButton = document.querySelectorAll(
+const showAnswerButtons = document.querySelectorAll(
   '[data-js="show-answer-button"]'
 );
-const answer = document.querySelectorAll('[data-js="answer"]');
+const answers = document.querySelectorAll('[data-js="answer"]');
 
-showAnswerButton.forEach((button, index) => {
+showAnswerButtons.forEach((button, index) => {
   button.addEventListener("click", () => {
-    answer[index].classList.toggle("visible");
+    answers[index].classList.toggle("visible");
   });
 });

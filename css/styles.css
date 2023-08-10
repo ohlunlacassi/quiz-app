@@ -90,14 +90,10 @@ a {
 .answer {
   display: none;
   height: 0;
-  overflow: hidden;
 }
 
-.answer:target {
-  display: flex;
-  height: auto;
-  justify-content: center;
-  align-items: center;
+.answer.visible {
+  display: inline-block;
 }
 
 .tag-container {

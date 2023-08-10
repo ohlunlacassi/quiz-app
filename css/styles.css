@@ -10,6 +10,31 @@ body {
   padding: 50px 150px 50px 150px;
 }
 
+.bookmarkRibbon {
+  width: 40px;
+  height: 70px;
+  background: #d1d1d1;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    50% calc(100% - 20px),
+    0% 100%,
+    0% 0%
+  );
+  position: relative;
+  left: 600px;
+  cursor: pointer;
+}
+
+.bookmarkRibbon:hover {
+  background: black;
+}
+
+.bookmarkRibbon.dark {
+  background: #333;
+}
+
 h1 {
   color: #daeaff;
   font-size: 3rem;

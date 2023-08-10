@@ -10,6 +10,10 @@ body {
   padding: 50px 150px 50px 150px;
 }
 
+.back-button {
+  position: fixed;
+}
+
 .bookmarkRibbon {
   width: 40px;
   height: 70px;
@@ -93,7 +97,7 @@ a {
   overflow: hidden;
 }
 
-.answer:target {
+.answer.visible {
   display: flex;
   height: auto;
   justify-content: center;

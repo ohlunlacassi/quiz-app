@@ -26,15 +26,48 @@
       <h1>Quiz App</h1>
     </header>
     <main>
-      <form>
+      <section class="question">
+        <div class="bookmarkRibbon" data-js="bookmark-button"></div>
+        <h2>Sample</h2>
+        <div class="button-container">
+          <button
+            class="show-answer"
+            type="button"
+            data-js="show-answer-button"
+          >
+            <a href="#answer7">Show Answer</a>
+          </button>
+        </div>
+        <div class="answer answer7" data-js="answer">Sample</div>
+        <div class="tag-container">
+          <p class="tag">#sample</p>
+          <p class="tag">#sample</p>
+        </div>
+      </section>
+
+      <form data-js="form">
         <label for="question">Your Question:</label>
-        <textarea name="question" id="question" cols="30" rows="10"></textarea>
+        <textarea
+          name="question"
+          id="question"
+          cols="30"
+          rows="10"
+          placeholder="your question"
+        ></textarea>
 
         <label for="answer">Your Answer:</label>
-        <textarea name="answer" id="answer" cols="30" rows="10"></textarea>
+        <textarea
+          name="answer"
+          id="answer"
+          cols="30"
+          rows="10"
+          placeholder="your answer"
+        ></textarea>
 
         <label for="tag">Tag:</label>
         <textarea name="tag" id="tag" rows="1"></textarea>
+
+        <button type="submit">Send</button>
       </form>
     </main>
     <footer>

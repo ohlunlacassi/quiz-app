@@ -1,6 +1,9 @@
-const bookmarkRibbon = document.querySelectorAll('[data-js="bookmark-button"]');
+const bookmarkButtons = document.querySelectorAll(
+  '[data-js="bookmark-button"]'
+);
 
-bookmarkRibbon.addEventListener("click", () => {
-  bookmarkRibbon.classList.add("dark");
-  console.log("Hello");
+bookmarkButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    button.classList.toggle("dark");
+  });
 });

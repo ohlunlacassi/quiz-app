@@ -1,68 +1,143 @@
-const bookmarkButtons = document.querySelectorAll(
-  '[data-js="bookmark-button"]'
-);
+// const bookmarkButtons = document.querySelectorAll(
+//   '[data-js="bookmark-button"]'
+// );
 
-bookmarkButtons.forEach((button) => {
+// bookmarkButtons.forEach((button) => {
+//   button.addEventListener("click", () => {
+//     button.classList.toggle("dark");
+//   });
+// });
+
+// const showAnswerButtons = document.querySelectorAll(
+//   '[data-js="show-answer-button"]'
+// );
+// const answers = document.querySelectorAll('[data-js="answer"]');
+
+// showAnswerButtons.forEach((button, index) => {
+//   button.addEventListener("click", () => {
+//     answers[index].classList.toggle("visible");
+//   });
+// });
+
+// const form = document.querySelector('[data-js="form"]');
+// const main = document.querySelector('[data-js="main"]');
+
+// function addQuestion(question, answer, tag) {
+//   const section = document.createElement("section");
+//   section.classList.add("question");
+
+//   const divBookmark = document.createElement("div");
+//   divBookmark.classList.add("bookmarkRibbon");
+//   divBookmark.dataset.js = "bookmark-button";
+
+//   const headline = document.createElement("h2");
+//   headline.innerText = question;
+
+//   const divButtonContainer = document.createElement("div");
+//   divButtonContainer.classList.add("button-container");
+
+//   const button = document.createElement("button");
+//   button.classList.add("show-answer");
+//   button.dataset.js = "show-answer-button";
+//   button.textContent = "Show Answer";
+
+//   const divAnswer = document.createElement("div");
+//   divAnswer.classList.add("answer");
+//   divAnswer.dataset.js = "answer";
+//   divAnswer.innerText = answer;
+//   divAnswer.addEventListener("click", () => {
+//     answer.classList.toggle("visible");
+//   });
+
+//   const divTagContainer = document.createElement("div");
+//   divTagContainer.classList.add("tag-container");
+
+//   const paragraph = document.createElement("p");
+//   paragraph.classList.add("tag");
+//   paragraph.innerText = `#${tag}`;
+
+//   main.appendChild(section);
+//   section.append(
+//     divBookmark,
+//     headline,
+//     divButtonContainer,
+//     divAnswer,
+//     divTagContainer
+//   );
+//   divButtonContainer.appendChild(button);
+//   divTagContainer.appendChild(paragraph);
+// }
+
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   const yourQuestion = event.target.question.value;
+//   const yourAnswer = event.target.answer.value;
+//   const tag = event.target.tag.value;
+//   addQuestion(yourQuestion, yourAnswer, tag);
+// });
+
+const form = document.querySelector('[data-js="form"]');
+const main = document.querySelector('[data-js="main"]');
+
+function initializeBookmarkButtons(button) {
   button.addEventListener("click", () => {
     button.classList.toggle("dark");
   });
-});
+}
 
-const showAnswerButtons = document.querySelectorAll(
-  '[data-js="show-answer-button"]'
-);
-const answers = document.querySelectorAll('[data-js="answer"]');
-
-showAnswerButtons.forEach((button, index) => {
+function initializeShowAnswerButton(button, answer) {
   button.addEventListener("click", () => {
-    answers[index].classList.toggle("visible");
+    answer.classList.toggle("visible");
   });
-});
+}
 
-const form = document.querySelector('[data-js="form"]');
-
-function addQuestion(text, number) {
+function addQuestion(question, answerText, tag) {
   const section = document.createElement("section");
   section.classList.add("question");
 
   const divBookmark = document.createElement("div");
   divBookmark.classList.add("bookmarkRibbon");
-  section.appendChild(divBookmark);
+  divBookmark.dataset.js = "bookmark-button";
+  initializeBookmarkButtons(divBookmark);
 
   const headline = document.createElement("h2");
-  headline.innerText = text;
-  section.appendChild(headline);
+  headline.innerText = question;
 
   const divButtonContainer = document.createElement("div");
   divButtonContainer.classList.add("button-container");
 
   const button = document.createElement("button");
   button.classList.add("show-answer");
-  button.textContent = "Show Answer";
   button.dataset.js = "show-answer-button";
-  divButtonContainer.appendChild(button);
-
-  const anchor = document.createElement("a");
-  anchor.href = `#answer${number}`;
-  button.appendChild(anchor);
+  button.textContent = "Show Answer";
+  initializeShowAnswerButton(
+    button,
+    section.querySelector('[data-js="answer"]')
+  );
 
   const divAnswer = document.createElement("div");
-  divAnswer.classList.add("answer", `#answer${number}`);
+  divAnswer.classList.add("answer");
   divAnswer.dataset.js = "answer";
-  divAnswer.innerText = text;
-  section.appendChild(divAnswer);
+  divAnswer.innerText = answerText;
 
   const divTagContainer = document.createElement("div");
   divTagContainer.classList.add("tag-container");
 
   const paragraph = document.createElement("p");
   paragraph.classList.add("tag");
-  paragraph.innerText = tag;
+  paragraph.innerText = `#${tag}`;
+
+  main.appendChild(section);
+  section.append(
+    divBookmark,
+    headline,
+    divButtonContainer,
+    divAnswer,
+    divTagContainer
+  );
+  divButtonContainer.appendChild(button);
   divTagContainer.appendChild(paragraph);
-
-  section.appendChild(divTagContainer);
-
-  document.body.appendChild(section);
+  section.appendChild("form");
 }
 
 form.addEventListener("submit", (event) => {

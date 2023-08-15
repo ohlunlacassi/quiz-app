@@ -14,6 +14,52 @@ body {
   position: fixed;
 }
 
+fieldset {
+  background-color: #8fc5ff;
+  border: none;
+  border-radius: 30px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 19%;
+}
+
+legend {
+  background-color: white;
+  border-radius: 30px;
+}
+
+.bookmarkRibbon {
+  width: 40px;
+  height: 70px;
+  background: #d1d1d1;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    50% calc(100% - 20px),
+    0% 100%,
+    0% 0%
+  );
+  position: relative;
+  left: 600px;
+  cursor: pointer;
+}
+
+.bookmarkRibbon:hover {
+  background: black;
+}
+
+.bookmarkRibbon.dark {
+  background: #333;
+}
+
+.form,
+.question {
+  margin-bottom: 50px;
+}
+
 h1 {
   color: #daeaff;
   font-size: 3rem;
@@ -21,7 +67,88 @@ h1 {
   justify-content: center;
   position: relative;
   bottom: 70px;
-  line-height: 150px;
+}
+
+.question {
+  border-radius: 66px;
+  background: #daeaff;
+  width: 700px;
+  position: relative;
+  left: 19%;
+}
+
+h2 {
+  color: #183eb5;
+  text-align: center;
+  padding: 30px;
+}
+
+div.button-container,
+div.answer {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+#tag {
+  margin: 15px;
+}
+
+.submit {
+  width: 150px;
+  line-height: 25px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 40%;
+}
+
+.show-answer {
+  line-height: 10px;
+  padding: 15px;
+  background-image: linear-gradient(#5aa5ff, #1d61f3);
+  border: none;
+  border-radius: 66px;
+  box-shadow: inset 8px 8px 24px #183586, inset -8px -8px 24px #fffff9;
+}
+
+.show-answer:hover {
+  background-image: linear-gradient(#3381fe, #154be0);
+  border: none;
+  border-radius: 66px;
+  box-shadow: inset 8px 8px 24px black, inset -8px -8px 24px #fffff9;
+}
+
+a {
+  text-decoration: none;
+  font-family: "REM", sans-serif;
+  color: white;
+}
+
+.answer {
+  display: none;
+  height: 0;
+  overflow: hidden;
+}
+
+.answer.visible {
+  display: flex;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.tag-container {
+  display: flex;
+  gap: 5px;
+  margin: 15px;
+}
+
+.tag-container .tag {
+  border: none;
+  border-radius: 50px;
+  background-color: #a4a3a1;
+  padding: 3px 10px;
 }
 
 footer {

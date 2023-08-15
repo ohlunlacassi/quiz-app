@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/form.css" />
+
     <title>Create Your Own Game</title>
   </head>
   <body>
@@ -24,6 +25,47 @@
       </a>
       <h1>Quiz App</h1>
     </header>
+    <main data-js="main">
+      <form class="form" data-js="form">
+        <fieldset>
+          <legend>Create Your Game</legend>
+          <label for="question">Your Question:</label>
+          <textarea
+            name="question"
+            id="question"
+            cols="30"
+            rows="10"
+            maxlength="150"
+            placeholder="your question..."
+            data-js="message"
+            required
+          ></textarea>
+          <p class="remaining-characters">
+            <span data-js="remaining-characters">150</span> characters left
+          </p>
+
+          <label for="answer">Your Answer:</label>
+          <textarea
+            name="answer"
+            id="answer"
+            cols="30"
+            rows="10"
+            maxlength="150"
+            placeholder="your answer..."
+            data-js="message2"
+            required
+          ></textarea>
+          <p class="remaining-characters">
+            <span data-js="remaining-characters2">150</span> characters left
+          </p>
+
+          <label for="tag">Tag:</label>
+          <textarea name="tag" id="tag" rows="1" required></textarea>
+
+          <button class="submit" type="submit">Send</button>
+        </fieldset>
+      </form>
+    </main>
     <footer>
       <nav class="icon">
         <a aria-label="home-button" href="./home.html">
@@ -60,5 +102,6 @@
         </a>
       </nav>
     </footer>
+    <script src="../javascript/form.js" defer></script>
   </body>
 </html>

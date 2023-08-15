@@ -55,6 +55,11 @@ legend {
   background: #333;
 }
 
+.form,
+.question {
+  margin-bottom: 50px;
+}
+
 h1 {
   color: #daeaff;
   font-size: 3rem;
@@ -83,6 +88,10 @@ div.answer {
   display: flex;
   justify-content: center;
   margin: 30px;
+}
+
+#tag {
+  margin: 15px;
 }
 
 .submit {

@@ -7,10 +7,11 @@ function initializeBookmarkButtons(button) {
   });
 }
 
-function initializeShowAnswerButton(button, answer) {
+function initializeShowAnswerButton(button, divAnswer) {
   button.addEventListener("click", () => {
-    answer.classList.toggle("visible");
+    divAnswer.classList.toggle("visible");
   });
+  console.log("It works");
 }
 
 function addQuestion(question, answerText, tag) {
@@ -41,6 +42,7 @@ function addQuestion(question, answerText, tag) {
   divAnswer.classList.add("answer");
   divAnswer.dataset.js = "answer";
   divAnswer.innerText = answerText;
+  initializeShowAnswerButton(button, divAnswer);
 
   const divTagContainer = document.createElement("div");
   divTagContainer.classList.add("tag-container");
@@ -70,14 +72,21 @@ form.addEventListener("submit", (event) => {
   addQuestion(yourQuestion, yourAnswer, tag);
 });
 
-const messageInput = document.querySelectorAll('[data-js="message"]');
+const messageInput = document.querySelector('[data-js="message"]');
 const charactersLeftElement = document.querySelector(
   '[data-js="remaining-characters"]'
 );
+const messageInput2 = document.querySelector('[data-js="message2"]');
+const charactersLeftElement2 = document.querySelector(
+  '[data-js="remaining-characters2"]'
+);
 
-messageInput.forEach((message) => {
-  message.addEventListener("input", (event) => {
-    charactersLeftElement.textContent =
-      150 - parseInt(event.target.value.length, 10);
-  });
+messageInput.addEventListener("input", (event) => {
+  charactersLeftElement.textContent =
+    150 - parseInt(event.target.value.length, 10);
+});
+
+messageInput2.addEventListener("input", (event) => {
+  charactersLeftElement2.textContent =
+    150 - parseInt(event.target.value.length, 10);
 });

@@ -27,28 +27,43 @@
     </header>
     <main data-js="main">
       <form data-js="form">
-        <label for="question">Your Question:</label>
-        <textarea
-          name="question"
-          id="question"
-          cols="30"
-          rows="10"
-          placeholder="your question"
-        ></textarea>
+        <fieldset>
+          <legend>Create Your Game</legend>
+          <label for="question">Your Question:</label>
+          <textarea
+            name="question"
+            id="question"
+            cols="30"
+            rows="10"
+            maxlength="150"
+            placeholder="your question"
+            data-js="message"
+            required
+          ></textarea>
+          <p class="remaining-characters">
+            <span data-js="remaining-characters">150</span> characters left
+          </p>
 
-        <label for="answer">Your Answer:</label>
-        <textarea
-          name="answer"
-          id="answer"
-          cols="30"
-          rows="10"
-          placeholder="your answer"
-        ></textarea>
+          <label for="answer">Your Answer:</label>
+          <textarea
+            name="answer"
+            id="answer"
+            cols="30"
+            rows="10"
+            maxlength="150"
+            placeholder="your answer"
+            data-js="message"
+            required
+          ></textarea>
+          <p class="remaining-characters">
+            <span data-js="remaining-characters">150</span> characters left
+          </p>
 
-        <label for="tag">Tag:</label>
-        <textarea name="tag" id="tag" rows="1"></textarea>
+          <label for="tag">Tag:</label>
+          <textarea name="tag" id="tag" rows="1" required></textarea>
 
-        <button type="submit">Send</button>
+          <button class="submit" type="submit">Send</button>
+        </fieldset>
       </form>
     </main>
     <footer>
